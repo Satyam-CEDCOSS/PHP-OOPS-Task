@@ -8,3 +8,4 @@ else{
     $_SESSION["sports"][$val]->qty--;
 }
 ?>
+<!-- Decrease Function -->

@@ -2,6 +2,8 @@
 include 'config.php';
     $total = 0;
     $txt = "";
+    // Display Data 
+    // Here Data is Display in Serial order Because data is fetched directly from class 
     foreach ($_SESSION["sports"] as $key => $value) {
         if ($value->qty>0){
             $txt .= "<tr><td><img src='./".$value->img.

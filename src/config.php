@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+// Class Function 
 class sports
 {
     public $id;
@@ -41,6 +43,7 @@ class sports
         return $this->img;
     }
 }
+// Required Data 
 if (!isset($_SESSION['sports'])) {
     $_SESSION['sports'] = array();
     $football = new sports(101, "football", "images/football.png", 150);
@@ -50,6 +53,4 @@ if (!isset($_SESSION['sports'])) {
     $soccer = new sports(105, "soccer", "images/soccer.png", 80);
     array_push($_SESSION['sports'], $football, $tennis, $basketball, $table_tennis, $soccer);
 }
-// session_unset();
-// session_destroy();
 ?>

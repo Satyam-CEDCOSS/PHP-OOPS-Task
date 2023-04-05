@@ -7,7 +7,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<link href="./CSS/stylish.css" type="text/css" rel="stylesheet">
 </head>
-
+<!-- Main Product Class  -->
 <body>
 	<?php
 	include_once "header.php"

@@ -1,3 +1,4 @@
+<!-- Increament Function -->
 <?php
 include 'config.php';
 $val = $_POST["id"];

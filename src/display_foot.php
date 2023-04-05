@@ -6,3 +6,4 @@ include 'config.php';
     }
         echo "<tr><td></td><td></td><td></td><td>Grand Total: $".$total."</td><td><button class='add-to-cart' onclick='empty()'>Empty Cart</button></td></tr>";
 ?>
+<!-- Footer Display  -->
