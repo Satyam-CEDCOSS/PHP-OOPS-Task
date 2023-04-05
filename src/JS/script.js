@@ -1,3 +1,4 @@
+// Display Function  
 function display() {
     $.ajax({
       type: "POST",
@@ -6,10 +7,16 @@ function display() {
     }).done(function (result) {
       $("#table_body").html(result);
     });
+    $.ajax({
+      type: "POST",
+      url: "/display_foot.php",
+      dataType: "text",
+    }).done(function (result) {
+      $("#table_foot").html(result);
+    });
   }
 
-display()
-
+// Add Product 
 function add_product(val){
     $.ajax({
         type: "POST",
@@ -21,15 +28,53 @@ function add_product(val){
       });
 }
 
-// DELETE TODO FUNCTION 
+// DELETE FUNCTION 
 function deletes(val) {
+  $.ajax({
+    type: "POST",
+    url: "/delete.php",
+    data: {id: val},
+    dataType: "text",
+  }).done(function (result) {
+    console.log(result)
+    display();
+  });
+}
+
+// Decrease Button FUNCTION 
+function dec_btn(val) {
     $.ajax({
       type: "POST",
-      url: "/delete.php",
-      data: "id=" + val,
+      url: "/decrease.php",
+      data: {id: val},
       dataType: "text",
     }).done(function (result) {
+      // console.log(result);
       display();
-    // console.log(result);
     });
   }
+
+// Increase Button FUNCTION 
+function inc_btn(val) {
+    $.ajax({
+      type: "POST",
+      url: "/increase.php",
+      data: {id: val},
+      dataType: "text",
+    }).done(function (result) {
+      // console.log(result);
+      display();
+    });
+  }
+
+// Empty Cart Function 
+function empty(){
+  $.ajax({
+    type: "POST",
+    url: "/empty.php",
+    dataType: "text",
+  }).done(function (result){
+    display()
+  })
+}
+

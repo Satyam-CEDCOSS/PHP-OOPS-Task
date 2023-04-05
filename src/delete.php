@@ -1,5 +1,6 @@
 <?php
-session_start();
+include 'config.php'; 
 $val = $_POST["id"];
-array_splice($_SESSION["product"],$val,1);
+$_SESSION["sports"][$val]->qty=0; 
+echo ($_SESSION["sports"][$val]->qty);
 ?>

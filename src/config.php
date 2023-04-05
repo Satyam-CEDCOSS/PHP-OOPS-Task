@@ -1,15 +1,11 @@
 <?php
 session_start();
-if (!isset($_SESSION["product"])){
-	$_SESSION["product"]=array();
-}
-
 class sports
 {
     public $id;
     public $name;
     public $price;
-    public $qty = 0;
+    public $qty;
     public $img;
     function __construct($id, $name, $img, $price)
     {
@@ -17,11 +13,12 @@ class sports
         $this->name = $name;
         $this->img = $img;
         $this->price = $price;
+        $this->qty = 0;
     }
 
-    public function setQuantityByOne()
+    public function setQuantityByOne($val)
     {
-        $this->qty++;
+        $val->qty++;
     }
     public function getQuantity()
     {
@@ -53,6 +50,6 @@ if (!isset($_SESSION['sports'])) {
     $soccer = new sports(105, "soccer", "images/soccer.png", 80);
     array_push($_SESSION['sports'], $football, $tennis, $basketball, $table_tennis, $soccer);
 }
-
-
+// session_unset();
+// session_destroy();
 ?>
